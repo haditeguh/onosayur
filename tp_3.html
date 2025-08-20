@@ -32,6 +32,9 @@
         font-style: normal;
       }
 
+      .img-footer {
+        width: 150px;
+      }
       .animated span {
         opacity: 0;
         position: absolute;
@@ -85,6 +88,10 @@
           margin-left: auto;
           margin-right: auto;
         }
+
+        .img-footer {
+          width: 90px; !important
+        }
       }
 
       @media (max-width: 960px) {
@@ -111,7 +118,7 @@
             "
           >
             <a href="#" class="navbar-brand p-2">
-              <img src="./assets/path.png" alt="brand-image" width="50px" />
+              <img src="./assets/logo.png" alt="brand-image" width="50px" />
               <span class="ps-2 fw-semibold"> Ono Sayur </span>
             </a>
             <button
@@ -390,14 +397,14 @@
         </h2>
         <div
           id="carouselExampleFade"
-          class="mx-auto carousel slide carousel-fade w-75"
+          class="mx-auto carousel slide carousel-fade"
           data-bs-theme="dark"
         >
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img
                 src="./assets/onosayur1.webp "
-                class="d-block mx-auto"
+                class="d-block mx-auto ratio ratio-16x9 w-75"
                 alt="..."
                 style="max-height: 80vh"
               />
@@ -405,7 +412,7 @@
             <div class="carousel-item">
               <img
                 src="./assets/onosayur2.webp "
-                class="d-block mx-auto"
+                class="d-block mx-auto ratio ratio-16x9 w-75"
                 alt="..."
                 style="max-height: 80vh"
               />
@@ -413,7 +420,7 @@
             <div class="carousel-item">
               <img
                 src="./assets/onosayur3.webp "
-                class="d-block mx-auto"
+                class="d-block mx-auto ratio ratio-16x9 w-75"
                 alt="..."
                 style="max-height: 80vh"
               />
@@ -422,7 +429,7 @@
             <div class="carousel-item">
               <img
                 src="./assets/onosayur4.webp "
-                class="d-block mx-auto"
+                class="d-block mx-auto ratio ratio-16x9 w-75"
                 alt="..."
                 style="max-height: 80vh"
               />
@@ -430,7 +437,7 @@
             <div class="carousel-item">
               <img
                 src="./assets/onosayur5.webp "
-                class="d-block mx-auto"
+                class="d-block mx-auto ratio ratio-16x9 w-75"
                 alt="..."
                 style="max-height: 80vh"
               />
@@ -438,7 +445,7 @@
             <div class="carousel-item">
               <img
                 src="./assets/onosayur6.webp "
-                class="d-block mx-auto"
+                class="d-block mx-auto ratio ratio-16x9 w-75"
                 alt="..."
                 style="max-height: 80vh"
               />
@@ -446,7 +453,7 @@
             <div class="carousel-item">
               <img
                 src="./assets/onosayur7.webp "
-                class="d-block mx-auto"
+                class="d-block mx-auto ratio ratio-16x9 w-75"
                 alt="..."
                 style="max-height: 80vh"
               />
@@ -707,6 +714,12 @@
 
       <!-- FOOTER -->
       <footer class="bg-success text-white pt-4 pb-3">
+        <img
+          src="./assets/logo.png"
+          alt="logo"
+          class="img-footer ratio ratio-1x1 d-block mx-auto"
+        />
+        <br />
         <div class="container">
           <div class="row text-center text-md-start">
             <!-- About -->
@@ -756,7 +769,10 @@
 
           <!-- Bottom -->
           <div class="text-center border-top pt-3 mt-3">
-            <small>&copy; 2025 Hydroponic Farm. All rights reserved.</small>
+            <small
+              >&copy; 2025 Ono Sayur Hidroponik Farm. All rights
+              reserved.</small
+            >
           </div>
         </div>
       </footer>
