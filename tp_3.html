@@ -33,8 +33,13 @@
       }
 
       .img-footer {
-        width: 150px;
+        width: 130px;
       }
+
+      .navbar-collapse {
+        transition: height 0.1s linear;
+      }
+
       .animated span {
         opacity: 0;
         position: absolute;
@@ -703,7 +708,7 @@
               Our Location
             </h2>
             <p class="text-muted mb-0">
-              Kunjungi kebun hidroponik kami di lokasi berikut
+              Kunjungi kebun hidroponik kami di lokasi berikut:
             </p>
           </div>
           <div class="d-flex justify-content-center">
@@ -796,5 +801,20 @@
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"
     ></script>
+    <script>
+      document
+        .querySelectorAll(".navbar-collapse .nav-link")
+        .forEach(function (link) {
+          link.addEventListener("click", function () {
+            var navbarCollapse = document.querySelector(".navbar-collapse");
+            if (navbarCollapse.classList.contains("show")) {
+              var bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                toggle: false,
+              });
+              bsCollapse.hide();
+            }
+          });
+        });
+    </script>
   </body>
 </html>
