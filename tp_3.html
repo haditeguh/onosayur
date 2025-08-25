@@ -21,6 +21,23 @@
       @import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
       @import url("https://fonts.googleapis.com/css2?family=Niconne&display=swap");
 
+      body {
+          position: relative;
+      }
+
+      #banner .card-img {
+         transition: transform 0.1s ease-out;
+      }
+
+      .parallax-bg {
+         transform: translateY(0px);
+      }
+
+      .navbar-nav .nav-link.active {
+        background-color: rgba(255, 255, 255, 0.2) !important;
+        border-radius: 5px;
+      }
+
       .niconne {
         font-family: "Niconne", cursive;
         font-weight: 400;
@@ -121,7 +138,13 @@
       }
     </style>
   </head>
-  <body style="background-color: #e2f6dc">
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="navbar-nav"
+    data-offset="100"
+    tabindex="0"
+    style="background-color: #e2f6dc"
+  >
     <main>
       <!-- HEADER/NAVBAR -->
       <header>
@@ -163,7 +186,7 @@
               class="collapse navbar-collapse justify-content-end p-2"
               id="navbarNav"
             >
-              <ul class="navbar-nav fw-semibold fs-6">
+              <ul id="navbar-nav" class="navbar-nav fw-semibold fs-6">
                 <li class="nav-item">
                   <a class="nav-link text-light" href="#banner">Home</a>
                 </li>
@@ -174,7 +197,7 @@
                   <a class="nav-link text-light" href="#product">Produk</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-light" href="#gallery">Galeri</a>
+                  <a class="nav-link text-light" href="#galeri">Galeri</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-light" href="#faq">FAQ</a>
@@ -422,7 +445,7 @@
       </section>
 
       <!-- GALLERY -->
-      <section id="gallery" class="py-5 bg-light">
+      <section id="galeri" class="py-5 bg-light">
         <div style="margin-top: 10px">
           <h2
             class="niconne text-success text-center mb-4"
@@ -770,7 +793,9 @@
             Silahkan tulis apa yang kamu ingin sampaikan terhadap kami.
           </p>
           <div class="mb-3">
-            <label for="" class="form-label">Nama: </label>
+            <label for="exampleFormControlInput1" class="form-label"
+              >Nama:
+            </label>
             <input
               class="form-control"
               type="text"
@@ -827,7 +852,7 @@
               <h5 class="fw-bold">Quick Links</h5>
               <ul class="list-unstyled">
                 <li>
-                  <a href="#home" class="text-decoration-none link-light"
+                  <a href="#banner" class="text-decoration-none link-light"
                     >Home</a
                   >
                 </li>
@@ -840,7 +865,7 @@
                   <a href="#faq" class="text-decoration-none link-light">FAQ</a>
                 </li>
                 <li>
-                  <a href="#testimoni" class="text-decoration-none link-light"
+                  <a href="#testi" class="text-decoration-none link-light"
                     >Testimoni</a
                   >
                 </li>
@@ -873,6 +898,16 @@
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+          target: "#navbar-nav",
+          offset: 100,
+        });
+      });
+    </script>
+
     <script>
       document
         .querySelectorAll(".navbar-collapse .nav-link")
@@ -887,6 +922,25 @@
             }
           });
         });
+    </script>
+    <script>
+      document.body.addEventListener("activate.bs.scrollspy", function (event) {
+        console.log("Active section:", event.relatedTarget);
+      });
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      window.addEventListener("scroll", function () {
+        const scrolled = window.pageYOffset;
+        const parallaxElement = document.querySelector("#banner .card-img");
+        const speed = 0.5; // Adjust this value to control parallax intensity (0.1 = subtle, 1 = fast)
+
+        if (parallaxElement) {
+          const yPos = -(scrolled * speed);
+          parallaxElement.style.transform = `translateY(${yPos}px)`;
+        }
+      });
     </script>
   </body>
 </html>
