@@ -888,6 +888,40 @@
         </div>
       </div>
 
+      <!-- METHOD 1: Bootstrap Modal Alert (Recommended) -->
+      <div class="modal fade" id="loadAlert" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content border-0 shadow-lg">
+            <div class="modal-header bg-danger text-white">
+              <h4 class="modal-title">
+                <i class="bi bi-info-circle-fill me-2"></i>
+                Lapor Komandan!
+              </h4>
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body p-4">
+              <p class="mb-3">
+                <strong>Whoops, Sepertinya ada bug!</strong> <br />
+                ada kesalahan render(?) pada halaman ini,
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-success"
+                data-bs-dismiss="modal"
+              >
+                Saya Mengerti.
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- FOOTER -->
       <footer class="bg-success text-white pt-4 pb-3">
         <img
@@ -967,6 +1001,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     -->
     <script>
+      // Bootstrap Modal Function
+      document.addEventListener("DOMContentLoaded", function () {
+        const loadAlert = new bootstrap.Modal(
+          document.getElementById("loadAlert"),
+        );
+        loadAlert.show();
+      });
+
       document.addEventListener("DOMContentLoaded", function () {
         var scrollSpy = new bootstrap.ScrollSpy(document.body, {
           target: "#navbar-nav",
